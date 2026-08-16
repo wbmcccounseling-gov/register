@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WBMCC Counseling for MBBS/BDS 2026 New Candidate Registration</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            padding: 35px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #4b5563;
+        }
+
+        label .required {
+            color: #dc2626;
+        }
+
+        label .optional-tag {
+            font-weight: 400;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        /* Radio Options Style */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+
+        /* Action Button */
+        .btn-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .submit-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.99);
+        }
+
+        /* Responsive collapse for small screens */
+        @media (max-width: 640px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: span 1;
+            }
+
+            .radio-group {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>WBMCC Counseling for MBBS/BDS 2026 New Candidate Registration</h1>
+
+        <form id="registrationForm" onsubmit="handleRegistration(event)">
+            <div class="form-grid">
+                
+                <!-- Candidate Personal Information -->
+                <div class="form-group full-width">
+                    <label for="candidateName">Candidate Name <span class="required">*</span></label>
+                    <input type="text" id="candidateName" name="candidateName" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="motherName">Mother's Name <span class="required">*</span></label>
+                    <input type="text" id="motherName" name="motherName" placeholder="Enter mother's name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fatherName">Father's Name <span class="required">*</span></label>
+                    <input type="text" id="fatherName" name="fatherName" placeholder="Enter father's name" required>
+                </div>
+
+                <!-- Address Details -->
+                <div class="form-group full-width">
+                    <label for="homeAddress">Home Address <span class="required">*</span></label>
+                    <textarea id="homeAddress" name="homeAddress" placeholder="Enter full address" required></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="pinCode">PIN Code <span class="required">*</span></label>
+                    <input type="text" id="pinCode" name="pinCode" placeholder="e.g. 700001" pattern="[0-9]{6}" title="Please enter a valid 6-digit PIN code" required>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="form-group">
+                    <label for="mobileNo">Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobileNo" name="mobileNo" placeholder="10-digit mobile number" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="altMobileNo">Alternate Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="altMobileNo" name="altMobileNo" placeholder="10-digit alternate number" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="altEmail">Alternate Email Address <span class="required">*</span></label>
+                    <input type="email" id="altEmail" name="altEmail" placeholder="alternate@email.com" required>
+                </div>
+
+                <!-- NEET Academic Info -->
+                <div class="form-group">
+                    <label for="neetAppNo">NEET (UG) 2026 Application Number <span class="required">*</span></label>
+                    <input type="text" id="neetAppNo" name="neetAppNo" placeholder="Enter application number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="neetRollNo">NEET (UG) 2026 Roll Number <span class="required">*</span></label>
+                    <input type="text" id="neetRollNo" name="neetRollNo" placeholder="Enter roll number" required>
+                </div>
+
+                <!-- Category Selection -->
+                <div class="form-group full-width">
+                    <label>Category <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="category" value="General" required> General
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="category" value="OBC"> OBC
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="category" value="SC"> SC
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="category" value="ST"> ST
+                        </label>
+                    </div>
+                </div>
+
+
+<!-- Residency Selection -->
+                <div class="form-group full-width">
+                    <label>Residency Selection <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="residency" value="Yes Resident of West Bengal" required> Yes Resident of West Bengal
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="residency" value="No not Resident of West Bengal"> No not Resident of West Bengal
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="residency" value="Resident of West Bengal for less than 5 Years"> Resident of West Bengal for less than 5 Years
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <!-- Optional Categories -->
+                <div class="form-group">
+                    <label for="ewsCategory">EWS Category <span class="optional-tag">(Optional)</span></label>
+                    <select id="ewsCategory" name="ewsCategory">
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwdCategory">PWD Category <span class="optional-tag">(Optional)</span></label>
+                    <select id="pwdCategory" name="pwdCategory">
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group full-width btn-container">
+                    <button type="submit" class="submit-btn">Register and Proceed</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function handleRegistration(event) {
+            // Prevent standard form post submission
+            event.preventDefault();
+
+            // Redirect to the external destination
+            window.location.href = "https://www.instagram.com/?hl=en";
+        }
+    </script>
+
+</body>
+</html>
